@@ -1,0 +1,112 @@
+<h2>Analitični Hierarhični Proces (AHP)</h2>
+<div class="container">
+        <!-- Criteria Section (on the left) -->
+        <div class="form-container">
+          <div class="criteria-section">
+            <h3>Izberi kriterije:</h3>
+            <div class="criteria-list">
+              <div *ngFor="let criterion of criteria; let i = index" class="criterion">
+                <input 
+                  type="checkbox" 
+                  [id]="criterion"
+                  (change)="updateSelection(criterion, $event)"
+                />
+                <label [for]="criterion">{{ getDisplayName(criterion) }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Comparison Section (on the right) -->
+        <div class="preference-section">
+          <fieldset class="border p-4 rounded">
+            <legend class="text-center mb-3">Primerjalne Ocene</legend>
+            <form (submit)="calculateMatrix()">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Kaj je bolj pomembno?</th>
+                    <th>Enako</th>
+                    <th>Koliko Bolj?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="pairwiseCriteria.length === 0">
+                    <td colspan="4" class="no-data-message">
+                      Please select at least two criteria to generate comparisons.
+                    </td>
+                  </tr>
+                  <tr *ngFor="let pair of pairwiseCriteria; let index = index">
+                    <td>{{ index + 1 }}</td>
+                    <td class="comparison-options">
+                      <label>
+                        <input 
+                          type="radio" 
+                          [name]="'comparison-' + index" 
+                          [value]="'A'" 
+                          (change)="updateComparison(index, 'A')"
+                        /> 
+                        {{ getDisplayName(pair[0]) }}
+                      </label>
+                      <label>
+                        <input 
+                          type="radio" 
+                          [name]="'comparison-' + index" 
+                          [value]="'B'" 
+                          (change)="updateComparison(index, 'B')"
+                        /> 
+                        {{ getDisplayName(pair[1]) }}
+                      </label>
+                    </td>
+                    <td class="equal-option">
+                      <input 
+                        type="radio" 
+                        [name]="'scale-' + index" 
+                        [value]="1" 
+                        (change)="updatePreference(index, 1)"
+                      /> 
+                      1
+                    </td>
+                    <td class="scale-options">
+                      <div>
+                        <label *ngFor="let value of preferenceScale">
+                          <input 
+                            type="radio" 
+                            [name]="'scale-' + index" 
+                            [value]="value" 
+                            (change)="updatePreference(index, value)"
+                          /> 
+                          {{ value }} 
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div *ngIf="showWarning" class="warning">
+                <p><strong>Opozorilo:</strong> Razmerje doslednosti (rc) je večje od 0,1!</p>
+              </div>
+              <button type="submit" [disabled]="pairwiseCriteria.length === 0" class="btn btn-success w-100 mt-3">Izračunaj AHP</button>
+            </form>
+          </fieldset>
+        </div>
+    
+      </div>
+    
+      <!-- Results Section -->
+      <div *ngIf="!showWarning && result">
+        <h3 class="Vizualizacija">Vizualizacija rezultatov</h3>
+        <h4>Izračunane uteži kriterijev</h4>
+    
+        <div class="charts-wrapper">
+          <div class="chart-container">
+            <canvas #weightsChartCanvas></canvas>
+          </div>
+          <div class="chart-container-distance">
+            <h4>AHP ocene</h4>
+            <canvas #closenessChartCanvas></canvas>
+          </div>
+        </div>
+      </div>
+    

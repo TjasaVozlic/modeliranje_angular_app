@@ -1,0 +1,62 @@
+:host {
+    display: block;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light neutral background */
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0; /* Subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  /* Logo Styling */
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #164dad; /* Dark gray */
+    text-align: center;
+    margin-bottom: 1rem; /* Space between title and buttons */
+    font-family: 'Arial', sans-serif;
+
+  }
+  
+ 
+/* Navigation Buttons Styling */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-buttons button {
+    background-color: #f4f7fa; /* Soft light background for buttons */
+    color: #333; /* Dark text for buttons */
+    border: none; /* No sharp border, modern look */
+    border-radius: 50px; /* Rounded corners */
+    padding: 0.75rem 1.5rem; /* Larger padding for a more spacious feel */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif;
+
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #e0e7ff; /* Soft blue highlight on hover */
+  }
+  
+  .nav-buttons button:active {
+    transform: scale(0.98); /* Slight press effect on click */
+  }
+  
+  .nav-buttons button:focus {
+    outline: none; /* Removing default focus outline for a cleaner look */
+  }
+  

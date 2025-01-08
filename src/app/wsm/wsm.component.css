@@ -1,0 +1,111 @@
+/* topsis.component.css */
+
+:host {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #007bff;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #70aded;
+}
+
+.btn.btn-success {
+    background-color: #5487bf; /* Temno modra barva */
+    border-color: #8fb2d7;
+    color: #ffffff;
+  }
+
+.text-secondary {
+color: #6c757d; /* Siva barva */
+}
+
+.table-striped {
+    background-color: #f9f9f9; /* Svetlo siva barva */
+  }
+.table-striped thead th {
+background-color: #5d5d5d; /* Temno modra barva */
+color: #ffffff; /* Bela barva za tekst */
+}
+
+h2.text-center.text-primary {
+    padding: 10px; /* Dodajte padding za boljši izgled */
+    font-family: 'Playfair Display', serif; /* Elegantna pisava za naslove */
+    color: #f1aa87ea  ;
+
+  }
+
+  .table-striped {
+    background-color: #f9f9f9; /* Svetlo siva barva */
+  }
+.table-striped thead th {
+background-color: #5d5d5d; /* Temno modra barva */
+color: #ffffff; /* Bela barva za tekst */
+}
+h2, h3, th {
+    font-family: 'Playfair Display', serif; /* Elegantna pisava za naslove */
+    font-weight: 700;
+}

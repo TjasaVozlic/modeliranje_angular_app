@@ -1,0 +1,50 @@
+.data-table-container {
+    max-width: 100%;
+    margin: 20px auto;
+    overflow-x: auto;
+  }
+  
+  mat-table {
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  mat-header-row {
+    background-color: #e3f2fd; /* Light blue for the header */
+    font-weight: bold;
+  }
+  
+  mat-header-cell {
+    color: #0d47a1; /* Darker blue for header text */
+    text-align: left;
+    padding: 8px;
+  }
+  
+  mat-row:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray for alternate rows */
+  }
+  
+  mat-row:nth-child(even) {
+    background-color: #ffffff; /* White for other rows */
+  }
+  
+  mat-cell {
+    padding: 8px;
+  }
+  .table-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; /* Dark blue color */
+    margin-bottom: 10px;
+  }
+  
+  .table-description {
+    font-size: 16px;
+    color: #555; /* Gray color for description */
+    margin-bottom: 20px;
+  }
+  h2, h3, th {
+    font-family: 'Playfair Display', serif; /* Elegantna pisava za naslove */
+    font-weight: 700;
+}
+  

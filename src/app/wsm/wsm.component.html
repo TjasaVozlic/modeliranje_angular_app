@@ -1,0 +1,50 @@
+<h2 class="text-center" style="color: #000000; margin-bottom: 20px;">WASPAS Analiza</h2>
+<div class="container">
+    <form [formGroup]="topsisForm" (ngSubmit)="onSubmit()">
+      <h2>Določite uteži kriterijev</h2>
+      <div class="row">
+          <div *ngFor="let key of topsisForm.controls | keyvalue" class="col-md-6 mb-3">
+              <label [for]="key.key" class="form-label">{{ criteriaDisplay[key.key] }}</label>
+              <input [id]="key.key" [formControlName]="key.key" type="number" step="0.01" class="form-control" />
+              <div *ngIf="topsisForm.get(key.key)?.invalid && topsisForm.get(key.key)?.touched" class="invalid-feedback">
+                  Value must be between 0 and 1.
+              </div>
+          </div>
+      </div>
+  
+      <button type="submit" [disabled]="topsisForm.invalid" class="btn btn-success w-100 mt-3">Submit</button>
+  </form>
+    <div *ngIf="result.length > 0">
+      <h3>Results</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Ime</th>
+            <th>WSM rank</th>
+            <th>WSM score</th>
+            <th>WPM rank</th>
+            <th>WPM score</th>
+            <th>WASPAS rank</th>
+            <th>WASPAs score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of result">
+            <td>{{ item.name }}</td>
+            <td>{{ item.wsm_rank }}</td>
+            <td>{{ item.wsm_distance | number: '1.2-4'}}</td>
+            <td>{{ item.wpm_rank }}</td>
+            <td>{{ item.wpm_distance | number: '1.2-4'}}</td>
+            <td>{{ item.waspas_rank }}</td>
+            <td>{{ item.waspas_distance | number: '1.2-4'}}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <h3>Graph</h3>
+      <div *ngIf="result.length > 0">
+        <canvas #chartCanvas></canvas>
+      </div>
+    </div>
+  </div>
+  

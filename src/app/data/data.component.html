@@ -1,0 +1,67 @@
+<div class="data-table-container">
+    <!-- Add a title or description for the table -->
+    <h2 class="table-title">Podatki o podjetjih</h2>
+    <p class="table-description">Ta tabela prikazuje ključne finančne podatke, vključno s prihodki, čistim dobičkom, rastjo prihodkov in drugimi pomembnimi kazalniki za izbrane svetovne korporacije.</p>
+  
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Rank Column -->
+      <ng-container matColumnDef="Rank">
+        <mat-header-cell *matHeaderCellDef> Vrsta </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[0]}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[1]}} </mat-cell>
+      </ng-container>
+  
+      <!-- prihodki Column -->
+      <ng-container matColumnDef="prihodki">
+        <mat-header-cell *matHeaderCellDef> Prihodki (€) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[2]}} </mat-cell>
+      </ng-container>
+  
+      <!-- odstotek_spremembe_prihodkov Column -->
+      <ng-container matColumnDef="odstotek_spremembe_prihodkov">
+        <mat-header-cell *matHeaderCellDef> % Spremembe </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[3]}}% </mat-cell>
+      </ng-container>
+  
+      <!-- cisti_dobicek Column -->
+      <ng-container matColumnDef="cisti_dobicek">
+        <mat-header-cell *matHeaderCellDef> Čisti Dobiček (€) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[4]}} </mat-cell>
+      </ng-container>
+  
+      <!-- rast_prihodkov Column -->
+      <ng-container matColumnDef="rast_prihodkov">
+        <mat-header-cell *matHeaderCellDef> Rast Prihodkov (%) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[5]}} </mat-cell>
+      </ng-container>
+  
+      <!-- sredstva Column -->
+      <ng-container matColumnDef="sredstva">
+        <mat-header-cell *matHeaderCellDef> Sredstva (€) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[6]}} </mat-cell>
+      </ng-container>
+  
+      <!-- debt_to_equity_ratio Column -->
+      <ng-container matColumnDef="debt_to_equity_ratio">
+        <mat-header-cell *matHeaderCellDef> Razmerje Dolg/Kap. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[7]}} </mat-cell>
+      </ng-container>
+  
+      <!-- roi Column -->
+      <ng-container matColumnDef="roi">
+        <mat-header-cell *matHeaderCellDef> ROI (%) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[8]}} </mat-cell>
+      </ng-container>
+  
+      <!-- Header Row -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <!-- Data Rows -->
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

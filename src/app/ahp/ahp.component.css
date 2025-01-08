@@ -1,0 +1,215 @@
+/* General container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Header styling */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+/* Criteria section on the left */
+.criteria-section {
+    padding: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.criteria-section h3 {
+    font-size: 1.2rem; /* Slightly larger for better readability */
+    margin-bottom: 10px;
+}
+
+.criteria-list {
+    display: flex;
+    flex-wrap: wrap;             /* Allow wrapping if necessary */
+    gap: 20px;                   /* Space between checkboxes */
+}
+
+.criterion {
+    display: flex;
+    align-items: center;
+    gap: 10px;                   /* Space between checkbox and label */
+    margin-bottom: 10px;         /* Space between rows if wrapping occurs */
+}
+
+.criterion input {
+    margin: 0;
+}
+
+/* Comparison section on the right */
+.comparison-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+.comparison-section h3 {
+    font-size: 1.2rem; /* Smaller font size */
+}
+
+/* Comparison table layout */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Removed the gray borders from table cells */
+.comparison-table th {
+    background-color: #f5b8d2;
+    font-weight: bold;
+}
+
+/* Styling for warning messages */
+.warning {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Button styling */
+button {
+    background-color: #3c7ff1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px; /* Increased width for button */
+    margin: 0 auto;
+    display: block;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.comparison-options {
+    display: flex;
+    align-items: left; /* Vertically align the items */
+    flex-wrap: wrap; /* Allow wrapping if the content is too wide */
+}
+
+/* No data message when no criteria are selected */
+.no-data-message {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Boljša berljivost */
+}
+
+h2, h3, th {
+    font-family: 'Playfair Display', serif; /* Elegantna pisava za naslove */
+    font-weight: 700;
+}
+
+label, input, td, button {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column; /* Stack the sections on top of each other */
+        gap: 20px;
+    }
+
+    .criteria-section, .comparison-section {
+        flex: 1 1 100%; /* Take up full width on smaller screens */
+    }
+
+    button {
+        max-width: 100%; /* Make button stretch to full width */
+    }
+}
+
+/* Charts section styling */
+.charts-wrapper {
+    display: flex;                     /* Flex layout for side by side */
+    gap: 40px;                         /* Space between charts */
+    flex-wrap: wrap;                   /* Allow charts to wrap if needed */
+    justify-content: center;           /* Center the charts */
+    width: 100%;                       /* Full width */
+}
+
+.chart-container {
+    height: 30%;                     /* Fixed height for consistency */
+    position: relative;                /* Ensure positioning works */
+
+}
+
+.chart-container-distance {
+    flex: 49%;                     /* Ensure each chart takes up nearly half the space */
+    height: 100%;                     /* Fixed height for consistency */
+    position: relative;                /* Ensure positioning works */
+    min-width: 300px;                  /* Ensures charts don’t get too small on small screens */
+
+}
+
+
+
+canvas {
+    width: 100% !important;            /* Stretch canvas to full width */
+    height: 100% !important;           /* Stretch canvas to full height */
+    display: block;                    /* Prevent inline-block issues */
+    min-height: 300px;                  /* Ensures charts don’t get too small on small screens */
+
+}
+
+.visualizacija {
+    position: center;           /* Center the charts */
+}
+
+:host {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.izbira {
+    display: flex;                     /* Flex layout for side by side */
+
+}
+
+
+
